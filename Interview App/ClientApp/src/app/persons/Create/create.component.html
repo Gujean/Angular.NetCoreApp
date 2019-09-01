@@ -1,0 +1,29 @@
+<div class="container register-form">
+            <div class="form">
+                <div class="note">
+                    <p>Create Person</p>
+                </div>
+                <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group ">
+                                <input type="text" class="form-control inps" placeholder="Your Name *" [(ngModel)]="person.name" value=""/>
+                            </div>
+
+                            <div class="form-group ">
+                                <input type="date" class="form-control inps" placeholder="Your Birthdate *" value="" [(ngModel)]="person.birthdate"/>
+                            </div>
+
+                            <div class="form-group">
+                                    <select (change)="selectDepartment($event.target.value)" class="inps">
+
+                                     <option [ngValue]="null">Select Department</option>
+                                            <option [value]="department.id" *ngFor="let department of departments">{{department.name}}</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btnSubmit  inps" (click)="create()">Submit</button>
+                </div>
+            </div>
+        </div>

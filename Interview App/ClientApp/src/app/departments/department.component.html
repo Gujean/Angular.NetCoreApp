@@ -1,0 +1,18 @@
+<table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+          </tr>
+        </thead>
+        <tbody id="departmentTable">
+          <tr *ngFor="let department of departments">
+              <th></th>
+              <th></th>
+            <th scope="col">{{department.id}}</th>
+            <th scope="col">{{department.name}}</th>
+          </tr>
+        </tbody>
+</table>

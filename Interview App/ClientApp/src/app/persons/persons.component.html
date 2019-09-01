@@ -1,0 +1,34 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Birthdate</th>
+        <th scope="col">Department</th>
+        <th scope="col">
+          <button class="btn btn-primary" (click)="goToCreate()">Create</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody id="tb">
+      <tr [id]="person.id" [ngClass]="{'selected': person.id == selectedId}" *ngFor="let person of persons" (click)="select(person.id)">
+        <th></th>
+        <th></th>
+        <th>{{person.id}}</th>
+        <th>{{person.name}}</th>
+        <th>{{person.birthdate}}</th>
+        <th>{{this.getDepartmentName(person.departmentId)}}</th>
+        <th>
+          <button class="btn btn-primary" (click)="goToEdit(person.id)">Edit</button>
+        </th>
+        <th>
+              <button class="btn btn-primary" (click)="deletePerson(person.id)">Delete</button>
+        </th>
+      </tr>
+      <tr>
+        <button (click)="process()">Process</button>
+      </tr>
+    </tbody>
+</table>
